@@ -50,12 +50,13 @@ alias vi='vim'
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # MacOSX
-  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
   alias dl='du -h -d 1'
   alias aw='source ~/working/pyenv/work/bin/activate'
-  # burp suite
-  # alias burp-suite='/opt/homebrew/opt/openjdk/bin/java -jar \
-  # /Users/honbey/tools/burp-suite/burpsuite_community_v2021.3.1.jar'
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  # emacs-port
+  alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+  alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+  alias killemacs="emacsclient -e '(kill-emacs)'"
 
   # Homebrew
   export PATH="/opt/homebrew/bin:$PATH"
@@ -82,6 +83,9 @@ elif [[ "$OSTYPE" == linux* ]]; then
   # alias n1r='/usr/local/nginx/sbin/nginx -s reload'
 fi
 
+if [[ -f "$HOME/.env" ]]; then
+  source "$HOME/.env"
+fi
 
 # Custom theme
 # PS1="%F{green}✓ %F{green}%n%F{cyan}@%F{green}%m %F{green} %F{cyan}%c "
@@ -103,7 +107,7 @@ zinit ice lucid wait='!0'
 zinit light honbey/mzt
 
 # History file configuration
-HISTFILE=~/.zsh_history
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
