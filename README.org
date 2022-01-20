@@ -24,6 +24,8 @@ zinit ice lucid wait='!0'
 zinit light honbey/mzt
 #+end_src
 
+You can change the colors as you like.
+
 *** Screen Shot
 Under Mac OSX:
 [[file:macos.png]]
@@ -34,7 +36,7 @@ Under Cent OS:
 ** Thanks
 
 *** Thanks to [[https://github.com/ohmyzsh/ohmyzsh][ohmyzsh/ohmyzsh]]
-The theme duplicates many code from [[https://github.com/ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh][ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh]] and [[https://github.com/ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme][ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme]]. I only modify prompt and add different logos for different OS/user. Thanks to Robby Russell and ohmyzsh's contributors.
+The theme duplicates many code from [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/theme-and-appearance.zsh][ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh]] and [[https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/awesomepanda.zsh-theme][ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme]]. I only modify prompt and add different logos for different OS/user. Thanks to Robby Russell and ohmyzsh's contributors.
 
 *** Thanks to [[https://github.com/zdharma-continuum][zdharma-continuum]]
 
