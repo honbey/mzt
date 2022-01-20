@@ -3,7 +3,7 @@ My zsh theme and configuration.
 
 ** Usage
 
-If you use `zinit`, you can add following code to your `.zshrc`. Then execute `source ~/.zshrc`. After cloning done, you will see the theme take effect.
+If you use ~zinit~, you can add following code to your ~.zshrc~. Then execute ~source .zshrc~. After cloning done, you will see the theme take effect.
 
 #+begin_src bash
 if [[ "$USER" == "root" ]]; then
