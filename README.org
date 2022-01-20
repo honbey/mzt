@@ -1,2 +1,45 @@
 * My zsh theme
-Personal theme and config.
+My zsh theme and configuration.
+
+** Usage
+
+If you use `zinit`, you can add following code to your `.zshrc`. Then execute `source ~/.zshrc`. After cloning done, you will see the theme take effect.
+
+#+begin_src bash
+if [[ "$USER" == "root" ]]; then
+  PS1="%F{gray} %F{cyan}%c "
+elif [[ "$OSTYPE" == darwin* ]]; then
+  PS1="%F{gray} %F{cyan}%c "
+elif grep -Eq "CentOS" /etc/*-release; then
+  PS1="%F{magenta} %F{cyan}%c "
+elif grep -Eq "Debian" /etc/*-release; then
+  PS1="%F{magenta} %F{cyan}%c "
+elif grep -Eq "Kali" /etc/*-release; then
+  PS1="%F{blue} %F{cyan}%c "
+else
+  PS1="%F{green}✓ %F{cyan}%c "
+fi
+zinit ice wait lucid atload
+zinit ice lucid wait='!0'
+zinit light honbey/mzt
+#+end_src
+
+*** Screen Shot
+Under Mac OSX:
+[[file:macos.png]]
+
+Under Cent OS:
+[[file:centos.png]]
+
+** Thanks
+
+*** Thanks to [[https://github.com/ohmyzsh/ohmyzsh][ohmyzsh/ohmyzsh]]
+The theme duplicates many code from [[https://github.com/ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh][ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh]] and [[https://github.com/ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme][ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme]]. I only modify prompt and add different logos for different OS/user. Thanks to Robby Russell and ohmyzsh's contributors.
+
+*** Thanks to [[https://github.com/zdharma-continuum][zdharma-continuum]]
+
+Thanks to zdharma/zinit for providing the wonderful ZSH plugins manager.
+
+
+** LICENSE
+mzt is under the MIT license.
