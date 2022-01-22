@@ -1,8 +1,10 @@
 # ls colors
 autoload -U colors && colors
 
-# Enable ls colors
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+# Enable ls colors only if not already set by the user
+if [[ -z "$LS_COLORS" ]]; then
+  export LS_COLORS="Gxfxcxdxbxegedabagacad"
+fi
 
 if [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   # Find the option for using colors in ls, depending on the version
