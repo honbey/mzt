@@ -33,15 +33,20 @@ Under Mac OSX:
 Under Cent OS:
 [[file:centos.png]]
 
+You can find icons from [[https://www.nerdfonts.com/][Nerd Fonts]].
+
 ** Thanks
 
 *** Thanks to [[https://github.com/ohmyzsh/ohmyzsh][ohmyzsh/ohmyzsh]]
-The theme duplicates many code from [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/theme-and-appearance.zsh][ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh]] and [[https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/awesomepanda.zsh-theme][ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme]]. I only modify prompt and add different logos for different OS/user. Thanks to Robby Russell and ohmyzsh's contributors.
+The theme duplicates many codes from [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/theme-and-appearance.zsh][ohmyzsh/ohmyzsh/lib/theme-and-appearance.zsh]] and [[https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/awesomepanda.zsh-theme][ohmyzsh/ohmyzsh/themes/awesomepanda.zsh-theme]]. I only modify prompt and add different logos for different OS/user. Thanks to Robby Russell and ohmyzsh's contributors.
 
 *** Thanks to [[https://github.com/zdharma-continuum][zdharma-continuum]]
 
 Thanks to zdharma/zinit for providing the wonderful ZSH plugins manager.
 
+*** Thanks to [[https://www.nerdfonts.com/][Nerd Fonts]]
+
+Thanks to Nerd Fonts for providing the awesome fonts.
 
 ** LICENSE
 mzt is under the MIT license.
