@@ -1,11 +1,6 @@
 # ls colors
 autoload -U colors && colors
 
-# Enable ls colors only if not already set by the user
-if [[ -z "$LSCOLORS" ]]; then
-  export LSCOLORS="Gxfxcxdxbxegedabagacad"
-fi
-
 if [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   # Find the option for using colors in ls, depending on the version
   if [[ "$OSTYPE" == netbsd* ]]; then
@@ -20,6 +15,11 @@ if [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     gls --color -d . &>/dev/null && alias ls='gls --color=tty'
     colorls -G -d . &>/dev/null && alias ls='colorls -G'
   elif [[ "$OSTYPE" == (darwin|freebsd)* ]]; then
+    # Enable ls colors, meaning of `LSCOLORS`: https://gist.github.com/thomd/7667642
+    # Only set it if LSCOLORS is unset - don't step on user's existing preferences
+    if [[ -z "$LSCOLORS" ]]; then
+      export LSCOLORS="Gxfxcxdxbxegedabagacad"
+    fi
     # this is a good alias, it works by default just using $LSCOLORS
     ls -G . &>/dev/null && alias ls='ls -G'
 
