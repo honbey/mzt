@@ -16,7 +16,10 @@ if [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     colorls -G -d . &>/dev/null && alias ls='colorls -G'
   elif [[ "$OSTYPE" == (darwin|freebsd)* ]]; then
     # Enable ls colors, meaning of `LSCOLORS`: https://gist.github.com/thomd/7667642
-    export LSCOLORS="Gxfxcxdxbxegedabagacad"
+    # Only set it if LSCOLORS is unset - don't step on user's existing preferences
+    if [[ -z "$LSCOLORS" ]]; then
+      export LSCOLORS="Gxfxcxdxbxegedabagacad"
+    fi
     # this is a good alias, it works by default just using $LSCOLORS
     ls -G . &>/dev/null && alias ls='ls -G'
 
