@@ -2,8 +2,8 @@
 autoload -U colors && colors
 
 # Enable ls colors only if not already set by the user
-if [[ -z "$LS_COLORS" ]]; then
-  export LS_COLORS="Gxfxcxdxbxegedabagacad"
+if [[ -z "$LSCOLORS" ]]; then
+  export LSCOLORS="Gxfxcxdxbxegedabagacad"
 fi
 
 if [[ "$DISABLE_LS_COLORS" != "true" ]]; then
