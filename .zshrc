@@ -47,11 +47,11 @@ alias ..='cd ..' ...='cd ../..'
 alias ck='cmake .'
 alias vi='vim'
 
+alias ap='a_pyvenv(){source /opt/zhang/pyvenv/${1}/bin/activate;}; a_pyvenv'
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # MacOSX
   alias dl='du -h -d 1'
-  alias aw='source ~/working/pyenv/work/bin/activate'
   alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
   # emacs-port
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
