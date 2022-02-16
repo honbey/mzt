@@ -26,7 +26,7 @@ zinit wait lucid for \
 zinit wait lucid for \
     zdharma-continuum/zsh-unique-id \
     OMZ::lib/git.zsh \
- atload"unalias grv g" \
+ atload \
     OMZ::plugins/git/git.plugin.zsh
 
 ### End of plugins
@@ -44,18 +44,21 @@ alias ls='ls --color=auto' ll='ls -alF' la='ls -A' l='ls -CF' l.='ls -d .*'
 alias rm='rm -i' cp='cp -v' mv='mv -v'
 alias grep='grep --color=auto'
 alias ..='cd ..' ...='cd ../..'
-alias ck='cmake .'
 alias vi='vim'
+alias :q='exit' :wq='exit'
+alias ck='cmake'
+alias c='curl'
+alias s='ssh'
 
 alias ap='a_pyvenv(){source /opt/zhang/pyvenv/${1}/bin/activate;}; a_pyvenv'
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # MacOSX
-  alias dl='du -h -d 1'
   alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  alias dl='du -h -d 1'
   # emacs-port
-  alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-  alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+  # alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+  # alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
   alias killemacs="emacsclient -e '(kill-emacs)'"
 
   # Homebrew
