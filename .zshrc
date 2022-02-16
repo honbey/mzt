@@ -90,6 +90,10 @@ if [[ -f "$HOME/.env" ]]; then
   source "$HOME/.env"
 fi
 
+if type gpg > /dev/null 2>&1; then
+  export GPG_TTY=$(tty)
+fi
+
 # Custom theme
 # PS1="%F{green}✓ %F{green}%n%F{cyan}@%F{green}%m %F{green} %F{cyan}%c "
 if [[ "$USER" == "root" ]]; then
