@@ -50,7 +50,7 @@ alias ck='cmake'
 alias c='curl'
 alias s='ssh'
 
-alias ap='a_pyvenv(){source /opt/zhang/pyvenv/${1}/bin/activate;}; a_pyvenv'
+alias ap='a_pyvenv(){source /opt/data/pyvenv/${1}/bin/activate;}; a_pyvenv'
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # MacOSX
@@ -81,6 +81,7 @@ elif [[ "$OSTYPE" == linux* ]]; then
   # alias o1t='openresty -t'
   # alias o1c='openresty -T'
   # alias o1r='openresty -s reload'
+  # alias n1='/usr/local/nginx/sbin/nginx'
   # alias n1t='/usr/local/nginx/sbin/nginx -t'
   # alias n1c='/usr/local/nginx/sbin/nginx -T'
   # alias n1r='/usr/local/nginx/sbin/nginx -s reload'
