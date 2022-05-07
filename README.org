@@ -1,5 +1,5 @@
 * My zsh theme
-My zsh theme and configuration.
+Zsh theme base on ~appearance~.
 
 ** Usage
 
