@@ -31,7 +31,6 @@ zinit wait lucid for \
 
 ### End of plugins
 
-
 ### My zshrc ###################################################################
 
 export PATH="$HOME/.bin:$PATH"
@@ -40,7 +39,7 @@ export PATH="$HOME/.bin:$PATH"
 WORDCHARS=''
 
 # User specific aliases and functions
-alias ls='ls --color=auto' ll='ls -alF' la='ls -A' l='ls -CF' l.='ls -d .*'
+alias ls='ls --color=auto' la='ls -A' ll='ls -ahlrt' l.='ls -d .*' l='ls -alF'
 alias rm='rm -i' cp='cp -v' mv='mv -v'
 alias grep='grep --color=auto'
 alias ..='cd ..' ...='cd ../..'
@@ -50,41 +49,51 @@ alias ck='cmake'
 alias c='curl'
 alias s='ssh'
 
-alias ap='a_pyvenv(){source /opt/data/pyvenv/${1}/bin/activate;}; a_pyvenv'
+if type emacs > /dev/null 2>&1; then
+  function start_emacs(){exec emacsclient -c -a "" "$@"}
+  alias killemacs="emacsclient -e '(kill-emacs)'"
+  alias emacs='start_emacs'
+fi
+
+function ap(){source /opt/data/pyvenv/${1}/bin/activate;}
+function be(){base64          <(echo "$1")}
+function bd(){base64 --decode <(echo "$1")}
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  # MacOSX
-  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  # macOS
   alias dl='du -h -d 1'
-  # emacs-port
-  # alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-  # alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-  alias killemacs="emacsclient -e '(kill-emacs)'"
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+  function ts2td(){date -r "$1" '+%Y-%m-%d %H:%M:%S'}
 
   # Homebrew
   export PATH="/opt/homebrew/bin:$PATH"
-  # If you need to have openssl@1.1 first in your PATH, run:
-  #  echo 'export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"' >> ~/.zshrc
 
-  # For compilers to find openssl@1.1 you may need to set:
-  #  export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
-  #  export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
 elif [[ "$OSTYPE" == linux* ]]; then
-  # Linux
   alias dl='du -h --max-depth=1'
+  alias syss='systemctl list-units --type=service'
   # Fast Jump
   alias d='dirs -v'
   alias j='jump_dir_stack(){ cd $(grep -m 1 $1 <(dirs -pl)); };jump_dir_stack'
-  alias jj='pushd'
-  alias syss='systemctl list-units --type=service'
+  alias p='pushd'
+
   # Nginx
-  # alias o1t='openresty -t'
-  # alias o1c='openresty -T'
-  # alias o1r='openresty -s reload'
-  # alias n1='/usr/local/nginx/sbin/nginx'
-  # alias n1t='/usr/local/nginx/sbin/nginx -t'
-  # alias n1c='/usr/local/nginx/sbin/nginx -T'
-  # alias n1r='/usr/local/nginx/sbin/nginx -s reload'
+  if   [[ -f "/usr/local/nginx/sbin/nginx"      ]]; then
+    alias ng='/usr/local/nginx/sbin/nginx'
+  elif [[ -f "/usr/local/nginx-quic/sbin/nginx" ]]; then
+    alias ng='/usr/local/nginx-quic/sbin/nginx'
+  else
+    alias ng='nginx'
+  fi
+
+  function ts2td(){date -d "@$1" '+%Y-%m-%d %H:%M:%S'}
+
+  # NVIDIA
+  if [[ -d "/usr/local/cuda" ]]; then
+    export PATH=$PATH:/usr/local/cuda/bin
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/
+    export CUDA_HOME=/usr/local/cuda
+  fi
 fi
 
 if [[ -f "$HOME/.env" ]]; then
