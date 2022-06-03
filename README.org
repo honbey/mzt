@@ -27,10 +27,10 @@ zinit light honbey/mzt
 You can change the colors as you like.
 
 *** Screen Shot
-Under Mac OSX:
+Under macOS:
 [[file:macos.png]]
 
-Under Cent OS:
+Under CentOS:
 [[file:centos.png]]
 
 You can find icons from [[https://www.nerdfonts.com/][Nerd Fonts]].
