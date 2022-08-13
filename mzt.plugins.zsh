@@ -59,11 +59,11 @@ setopt prompt_subst
 # git theming default: Variables for theming the git info prompt
 if [[ "$USER" == "root" ]]; then
   PROMPT="%(?:%{$fg_bold[gray]%} :%{$fg_bold[red]%} )"
-elif [[ "$OSTYPE" == darwin* ]]; then
+elif [[ "$OSTYPE" == "darwin*" ]]; then
   PROMPT="%(?:%{$fg_bold[gray]%} :%{$fg_bold[red]%} )"
-elif grep -Eq "CentOS" /etc/*-release; then
+elif grep -Eq "Fedora|CentOS|Redhat|openEuler" /etc/*-release; then
   PROMPT="%(?:%{$fg_bold[magenta]%} :%{$fg_bold[red]%} )"
-elif grep -Eq "Debian" /etc/*-release; then 
+elif grep -Eq "Debian|Ubuntu" /etc/*-release; then 
   PROMPT="%(?:%{$fg_bold[magenta]%} :%{$fg_bold[red]%} )"
 elif grep -Eq "Kali" /etc/*-release; then 
   PROMPT="%(?:%{$fg_bold[blue]%} :%{$fg_bold[red]%} )"
