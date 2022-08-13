@@ -62,9 +62,9 @@ if [[ "$USER" == "root" ]]; then
 elif [[ "$OSTYPE" == "darwin*" ]]; then
   PROMPT="%(?:%{$fg_bold[gray]%} :%{$fg_bold[red]%} )"
 elif grep -Eq "Fedora|CentOS|Redhat|openEuler" /etc/*-release; then
-  PROMPT="%(?:%{$fg_bold[magenta]%} :%{$fg_bold[red]%} )"
+  PROMPT="%(?:%{$fg_bold[gray]%} :%{$fg_bold[red]%} )"
 elif grep -Eq "Debian|Ubuntu" /etc/*-release; then 
-  PROMPT="%(?:%{$fg_bold[magenta]%} :%{$fg_bold[red]%} )"
+  PROMPT="%(?:%{$fg_bold[blue]%} :%{$fg_bold[red]%} )"
 elif grep -Eq "Kali" /etc/*-release; then 
   PROMPT="%(?:%{$fg_bold[blue]%} :%{$fg_bold[red]%} )"
 else
